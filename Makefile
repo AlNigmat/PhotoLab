@@ -1,5 +1,5 @@
 GXX=g++
-BD=../build
+BD=build
 CXX_FLAGS=-c -Wall -Werror -Wextra -std=c++17
 GTESTFLAGS=-lgtest
 
@@ -27,11 +27,12 @@ all: test clean
 install: clean build
 
 build:
-	cd $(BD) && qmake ../src/PhotoLab/PhotoLab.pro && make
+	mkdir build
+	cd $(BD) && qmake ../PhotoLab/PhotoLab.pro && make
+	cd $(BD) && open PhotoLab.app
 
 uninstall:
-	rm -rf $(HOME)/Applications/PhotoLab
-	rm -rf $(BD)/*
+	rm -rf $(BD)
 
 test: clean $(MODEL_OBJECTS)
 	$(GXX) $(MODEL_OBJECTS) -o $(BD)/$@ $(GTESTFLAGS)
@@ -39,4 +40,3 @@ test: clean $(MODEL_OBJECTS)
 
 clean:
 	rm -rf $(BD)/*
-
