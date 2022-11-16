@@ -4,8 +4,8 @@
 
 #include "Controller/controller.h"
 
-#define PHOTO "../misc/images/Lena.bmp"
-#define PHOTO_ERROR "../misc/images/rrena.bmp"
+#define PHOTO "imgs/Lena.bmp"
+#define PHOTO_ERROR "imgs/rrena.bmp"
 
 s21::Photo p;
 s21::Controller ctr(&p);
