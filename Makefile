@@ -7,7 +7,7 @@ ifeq ($(shell uname -s), Linux)
 	GTESTFLAGS+= -lpthread -lrt
 endif
 
-MODEL_SOURCES= test.cpp Photo.cpp Filter.cpp SimpleFilter.cpp sliders.cpp controller.cpp 
+MODEL_SOURCES= test.cpp Photo.cpp Filter.cpp SimpleFilter.cpp Sliders.cpp controller.cpp 
 MODEL_OBJECTS=$(addprefix $(BD)/,$(MODEL_SOURCES:.cpp=.o))
 
 ./$(BD)/%.o:%.cpp
