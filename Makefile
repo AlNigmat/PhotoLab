@@ -22,7 +22,7 @@ MODEL_OBJECTS=$(addprefix $(BD)/,$(MODEL_SOURCES:.cpp=.o))
 ./$(BD)/%.o: */*/*/%.cpp
 	$(GXX) $(CXX_FLAGS) $< -o $@
 
-all: test check clean
+all: test clean
 
 install: clean build
 
